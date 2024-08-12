@@ -17,6 +17,8 @@ class Aplicacion(tk.Tk):
         self.menu_inicio.add_command(label="Pestaña 1", command=self.pestaña1)
         self.menu_inicio.add_command(label="Pestaña 2", command=self.pestaña2)
         self.menu_inicio.add_command(label="Pestaña 3", command=self.pestaña3)
+        self.menu_inicio.add_separator()
+        self.menu_inicio.add_command(label="Salir", command=self.logout)
         self.menubar.add_cascade(label="Inicio", menu=self.menu_inicio)
 
         # Crear reloj en la zona superior derecha
@@ -55,6 +57,9 @@ class Aplicacion(tk.Tk):
         hora_actual = time.strftime("%H:%M:%S")
         self.reloj.config(text=hora_actual)
         self.after(1000, self.actualizar_reloj)
+
+    def logout(self):
+        self.quit()
 
 # Llamada a la clase y a mainloop para inciar la app
 app = Aplicacion()
