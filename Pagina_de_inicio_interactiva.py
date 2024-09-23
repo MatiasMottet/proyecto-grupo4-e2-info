@@ -38,6 +38,14 @@ class Aplicacion(tk.Tk):
         self.pestañas.add(self.pestaña2_frame, text="Pestaña 2")
         self.pestañas.add(self.pestaña3_frame, text="Pestaña 3")
 
+        #Crear estilo
+        style = ttk.Style()
+        style.theme_use("clam")
+        style.configure("TNotebook", background="lightblue")
+        style.configure("TNotebook.Tab", font=("Arial", 12, "bold"), padding=[10, 5])
+        style.configure("TLabel", font=("Arial", 12))
+        
+
     def pestaña1(self):
         # Contenido de la pestaña 1
         label = tk.Label(self.pestaña1_frame, text="Contenido de la pestaña 1")
@@ -60,6 +68,8 @@ class Aplicacion(tk.Tk):
 
     def logout(self):
         self.quit()
+
+
 
 # Llamada a la clase y a mainloop para inciar la app
 app = Aplicacion()
